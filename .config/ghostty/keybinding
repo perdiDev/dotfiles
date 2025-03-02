@@ -1,0 +1,9 @@
+# Create new tab
+keybind = ctrl+g>n=new_tab
+keybind = ctrl+g>w=close_tab
+
+# toogle fullscreen
+keybind = ctrl+g>f=toggle_fullscreen
+
+# create new tab
+keybind = ctrl+g>t=new_window

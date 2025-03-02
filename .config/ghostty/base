@@ -1,0 +1,5 @@
+# set fullscreen
+fullscreen = true
+
+# hide mouse on type
+mouse-hide-while-typing = true

@@ -1,0 +1,15 @@
+# set theme
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# set background opacity
+background-opacity = 0.8
+
+# set background blur if opacity is less than 1
+background-blur = true
+
+# set font family
+font-family = Nerd Font Mono
+
+# set font size
+font-size = 14
+
