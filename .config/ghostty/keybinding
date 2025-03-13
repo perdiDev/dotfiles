@@ -1,9 +1,37 @@
-# Create new tab
-keybind = ctrl+g>n=new_tab
-keybind = ctrl+g>w=close_tab
-
 # toogle fullscreen
 keybind = ctrl+g>f=toggle_fullscreen
 
 # create new tab
-keybind = ctrl+g>t=new_window
+keybind = ctrl+g>t=new_tab
+
+# open new window
+keybind = ctrl+g>w=new_window
+
+# previous tab
+keybind = ctrl+g>p=previous_tab
+
+# net tab
+keybind = ctrl+g>n=next_tab
+
+# split tab
+keybind = ctrl+g>shift+h=new_split:left
+keybind = ctrl+g>shift+j=new_split:down
+keybind = ctrl+g>shift+k=new_split:up
+keybind = ctrl+g>shift+l=new_split:right
+
+# change focus in split tab
+keybind = ctrl+g>s>n=goto_split:next
+keybind = ctrl+g>s>p=goto_split:previous
+keybind = ctrl+g>h=goto_split:left
+keybind = ctrl+g>j=goto_split:down
+keybind = ctrl+g>k=goto_split:up
+keybind = ctrl+g>l=goto_split:right
+
+# resize split
+keybind = ctrl+g>r>h=resize_split:left,10
+keybind = ctrl+g>r>j=resize_split:down,10
+keybind = ctrl+g>r>k=resize_split:up,10
+keybind = ctrl+g>r>l=resize_split:right,10
+
+# close split, tab, or window
+keybind = ctrl+g>w>w=close_surface
