@@ -1,3 +1,3 @@
-require("config.lazy")
-require("config.settings")
-
+-- require("perdidev.config.options")
+-- require("perdidev.config.keymaps")
+require("perdidev.config.lazy")
