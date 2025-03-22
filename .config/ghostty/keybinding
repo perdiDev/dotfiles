@@ -28,10 +28,13 @@ keybind = ctrl+g>k=goto_split:up
 keybind = ctrl+g>l=goto_split:right
 
 # resize split
-keybind = ctrl+g>r>h=resize_split:left,10
-keybind = ctrl+g>r>j=resize_split:down,10
-keybind = ctrl+g>r>k=resize_split:up,10
-keybind = ctrl+g>r>l=resize_split:right,10
+keybind = ctrl+g>r>h=resize_split:left,100
+keybind = ctrl+g>r>j=resize_split:down,100
+keybind = ctrl+g>r>k=resize_split:up,100
+keybind = ctrl+g>r>l=resize_split:right,100
+
+# equalize split
+keybind = ctrl+g>r>e=equalize_splits
 
 # close split, tab, or window
 keybind = ctrl+g>w>w=close_surface

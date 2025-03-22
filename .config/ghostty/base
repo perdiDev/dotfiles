@@ -1,5 +1,30 @@
+# shell integration
+shell-integration = zsh
+
 # set fullscreen
-fullscreen = true
+# fullscreen = true
+
+# set maximize
+# maximize = true
 
 # hide mouse on type
 mouse-hide-while-typing = true
+
+# make tab hidden
+gtk-tabs-location = hidden
+
+# hide the titlebar when maximized
+gtk-titlebar-hide-when-maximized = true
+
+# hide the titlebar
+gtk-titlebar = false
+
+# set wide tabs to expand the space
+gtk-wide-tabs = true
+
+# make the bold text be an color
+bold-is-bright = true
+
+# set window size
+window-height = 40
+window-width = 155
