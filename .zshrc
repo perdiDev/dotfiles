@@ -77,3 +77,7 @@ alias yayip="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# go
+export GOPATH="$HOME/go"
+export PATH=$PATH:$GOPATH/bin
