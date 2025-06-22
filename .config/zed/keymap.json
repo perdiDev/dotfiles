@@ -1,0 +1,31 @@
+[
+    {
+        "context": "menu && not_editing",
+        "bindings": {
+            "q": "workspace::ToggleRightDock",
+            "%": "project_panel::NewFile",
+            "d": "project_panel::NewDirectory",
+            "shift-d": "project_panel::Delete",
+            "r": "project_panel::Rename"
+        }
+    },
+    {
+        "context": "git_panel",
+        "bindings": {
+            "q": "git_panel::Close"
+        }
+    },
+    {
+        "context": "vim_mode  == normal  && !menu",
+        "bindings": {
+            "space p": "file_finder::Toggle",
+            "space q q": "pane::CloseActiveItem",
+            "space h": "editor::Hover",
+            "space t n": "pane::ActivateNextItem",
+            "space t p": "pane::ActivatePreviousItem",
+            "space escape": "workspace::ToggleRightDock",
+            "space e e": "project_panel::ToggleFocus",
+            "space e g": "git_panel::ToggleFocus"
+        }
+    }
+]

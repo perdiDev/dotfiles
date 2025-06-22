@@ -8,12 +8,13 @@ return {
             vim.cmd([[colorscheme catppuccin-mocha]])
         end,
         integrations = {
+            treesitter = true,
             lualine = true,
             dashboard = true,
             fzf = true,
             snacks = {
                 enabled = false,
-                indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+                indent_scope_color = "lavender",
             }
         }
     },

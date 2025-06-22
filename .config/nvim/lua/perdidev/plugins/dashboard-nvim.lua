@@ -2,6 +2,7 @@ return {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
     enabled = false,
+    cond = false,
     opts = function()
         local header = table.concat({
             "    ╔════════════════════════════════════════════════════════════════════╗",
