@@ -1,0 +1,202 @@
+{
+    "layer": "top",
+    "modules-left": ["user", "hyprland/workspaces", "tray", "privacy"],
+    "modules-center": ["clock"],
+    "modules-right": ["group/system", "group/setting", "group/power"],
+    "spacing": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "margin-top": 8,
+
+    "user": {
+        "format": "󰣇 {user} ({up_H}:{up_M})",
+        "interval": 15,
+        "height": 30,
+        "width": 30,
+        "icon": true,
+        "open-on-click": true
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "persistent-workspaces": {"*": 4},
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "urgent": "",
+            "default": ""
+        },
+        "sort-by-number": true
+    },
+
+    "tray": {
+        "icon-size": 17,
+        "spacing": 6
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "{:%a, %d %b  %H:%M}",
+        "format-alt": "{:%H:%M}",
+        "tooltip": false,
+        "calender": {
+            "mode": "month"
+        }
+    },
+
+    "group/system": {
+        "orientation": "inherit",
+        "modules": ["cpu", "memory", "battery"]
+    },
+
+    "battery": {
+        "interval": 3,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {icon} {capacity}%",
+        "format-plugged": " {icon} {capacity}%",
+        "format-nobattery": " {icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}:{m}",
+        "format-tooltip": " {timeTo} | {health}",
+        "states": {
+            "warning": 20,
+            "critical": 10,
+            "nobattery": 0
+        },
+        "max-length": 25
+    },
+    "cpu": {
+        "interval": 3,
+        "format": " {usage}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 3,
+        "format": " {used:0.1f}G/{total:0.1f}G",
+        "tooltip-format": "{percentage}% main used. {swapPercentage} swap used."
+    },
+
+    "group/expand": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "no-expand",
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/expand", "wireplumber", "backlight", "bluetooth"]
+    },
+    "custom/expand": {
+        "format": "",
+        "tooltip": false
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+    "bluetooth": {
+        "interval": 3,
+        "format": "",
+        "format-on": "",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias} ({num_connections} connected)",
+        "tooltip-format-connected": "{controller_alias}\t{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "$HOME/.config/waybar/scripts/toggle_bluetooth.sh"
+    },
+
+    "group/setting": {
+        "orientation": "inherit",
+        "modules": ["group/expand", "network"]
+    },
+    "network": {
+        "interval": 3,
+        "format": "{ifname}",
+        "format-wifi": "  {signalStrength}%",
+        "format-disconnected": "",
+        "format-disabled": "󰪎",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "$HOME/.config/waybar/scripts/toggle_wifi.sh"
+    },
+
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 100,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot"
+        ]
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    },
+
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ],
+        "ignore-monitor": true,
+        "ignore": [
+            {
+                "type": "audio-in",
+                "name": "cava"
+            },
+            {
+                "type": "screenshare",
+                "name": "obs"
+            }
+        ]
+    },
+
+    "reload_style_on_change": true
+}

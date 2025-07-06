@@ -1,0 +1,86 @@
+@import "mocha.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", serif;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#user, #workspaces, #privacy, #clock, #system,  #setting, #power
+{
+    color: @text;
+    border-radius: 10px;
+    background-color: alpha(@blue, .2);
+    padding: 2px 12px;
+}
+
+#workspaces, #system, #setting, #power {
+    padding: 2px 4px;
+}
+
+#cpu, #memory, #battery, #bluetooth, #network, #wireplumber, #backlight, #expand, #custom-power, #custom-reboot, #custom-quit, #custom-lock {
+    padding: 0px 8px;
+}
+
+#user {
+    color: @subtext2;
+    background-color: alpha(@sky, .4);
+    border-radius: 10px;
+    padding: 0px 12px;
+}
+
+#workspaces button {
+    all: initial;
+    color: @text;
+    padding: 2px 12px;
+    transition: all .1s ease;
+}
+
+#workspaces button:hover {
+    color: alpha(@blue, 0.6);
+}
+
+#workspaces button.active {
+    color: @blue;
+}
+
+#battery.warning {
+    color: @peach;
+}
+
+#battery.nobattery {
+    color: @red;
+}
+
+#custom-power:hover, #custom-quit:hover, #custom-reboot:hover, #custom-lock:hover {
+    color: @blue;
+}
+
+#custom-power {
+    color: @red;
+}
+
+#custom-lock {
+    color: @peach;
+}
+
+#custom-reboot {
+    color: @sapphire;
+}
+
+#custom-quit {
+    color: @pink;
+}
+
+tooltip {
+    padding: 8px;
+    border-radius: 10px;
+    background-color: alpha(@blue, .4);
+}
+
+tooltip label {
+    all: unset;
+    color: @text;
+}
