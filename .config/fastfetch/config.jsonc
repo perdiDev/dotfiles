@@ -11,7 +11,8 @@
     "de",
     "font",
     "cpu",
-    "gpu"
+    "gpu",
+    "break"
   ],
   "logo": {
       "source": "arch_small",
