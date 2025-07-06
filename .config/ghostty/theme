@@ -11,7 +11,7 @@ font-size = 14
 split-divider-color = #c6a0f6
 
 # set background opacity
-# background-opacity = 0.85
+background-opacity = 0.9
 
 # set background blur if opacity is less than 1
-# background-blur = 50
+background-blur = 20
