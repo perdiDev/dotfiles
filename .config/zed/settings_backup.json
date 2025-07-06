@@ -85,7 +85,7 @@
         "button": false,
         "dock": "right"
     },
-    "agent": {
+    "assistant": {
         "enabled": true,
         "button": true,
         "dock": "left",
