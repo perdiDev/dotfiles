@@ -20,7 +20,8 @@ return {
                 }, "\n")
             }
         },
-        explorer = { enabled = true },
+        explorer = { 
+            enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
         notifier = {
