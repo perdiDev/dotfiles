@@ -15,6 +15,9 @@ return {
             snacks = {
                 enabled = false,
                 indent_scope_color = "lavender",
+            },
+            native_lsp = {
+                enabled = true
             }
         }
     },
