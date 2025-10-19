@@ -6,27 +6,49 @@
         "type": "colors",
         "symbol": "circle"
     },
-    "kernel",
-    "uptime",
-    "de",
-    "font",
-    "cpu",
-    "gpu",
-    "break"
+    {
+        "key": "",
+        "type": "kernel"
+    },
+    {
+        "key": "󱦟",
+        "type": "uptime"
+    },
+    {
+        "key": "",
+        "type": "cpu",
+        "keyColor": "magenta"
+    },
+    {
+        "key": "󱓞",
+        "type": "gpu",
+        "keyColor": "magenta"
+    },
+    {
+        "key": "",
+        "type": "terminal",
+        "keyColor": "magenta"
+    }
   ],
   "logo": {
       "source": "arch_small",
       "padding": {
-          "top": 1,
-          "bottom": 2
+          "left": 1
+      },
+      "color": {
+          "1": "blue",
+          "2": "magenta"
       }
   },
   "display": {
-      "separator": "-> ",
+      "separator": " ",
+      "key": {
+          "paddingLeft": 0
+      },
       "color": {
-        "logo": "blue",
-        "separator": "blue",
-        "title": "blue"
+        "separator": "magenta",
+        "title": "magenta",
+        "keys": "blue"
       }
   }
 }
