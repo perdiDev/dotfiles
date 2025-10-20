@@ -1,7 +1,7 @@
 eval "$(oh-my-posh init zsh --config ~/.perdidev.omp.toml)"
 
 # Show neofetch when open terminal
-fastfetch
+echo -e "\n" && fastfetch
 
 # source fzf in zsh
 source <(fzf --zsh)

@@ -28,7 +28,8 @@
         "key": "",
         "type": "terminal",
         "keyColor": "magenta"
-    }
+    },
+    "break"
   ],
   "logo": {
       "source": "arch_small",
