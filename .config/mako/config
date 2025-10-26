@@ -1,18 +1,28 @@
 # General
-default-timeout=3000
-padding=4
+font=Jetbrains Mono Font 10
+default-timeout=15000
 max-visible=3
 max-history=10
+on-button-right=dismiss
+
+# Style
+anchor=top-center
+width=400
 outer-margin=12
 padding=12
-anchor=top-center
+border-radius=10
 
 # Colors
 background-color=#1e1e2e
 text-color=#cdd6f4
 border-color=#74c7ec
-border-radius=10
-progress-color=#313244
+progress-color=over #313244
 
-[urgency=high]
+[urgency=low]
+border-color=#f5e0dc
+
+[urgency=normal]
+border-color=#74c7ec
+
+[urgency=critical]
 border-color=#fab387
