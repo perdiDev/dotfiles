@@ -1,6 +1,6 @@
 # General
 font=Jetbrains Mono Font 10
-default-timeout=15000
+default-timeout=5000
 max-visible=3
 max-history=10
 on-button-right=dismiss
