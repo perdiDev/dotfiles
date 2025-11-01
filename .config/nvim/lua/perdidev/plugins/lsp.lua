@@ -1,6 +1,10 @@
 return {
     {
-        "williamboman/mason-lspconfig.nvim",
+        "meson-org/mason-lspconfig.nvim",
+        dependencies = {
+            "mason.nvim",
+            "neovim/nvim-lspconfig"
+        },
         opts = {
             ensure_installed = {
                 "lua_ls",
@@ -10,24 +14,21 @@ return {
                 "ts_ls",
                 "html"
             },
-            handlers = {
-                -- The first entry (without a key) will be the default handler
-                -- and will be called for each installed server that doesn't have
-                -- a dedicated handler.
-                function (server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {}
-                end,
-                -- Next, you can provide targeted overrides for specific servers.
-                ["rust_analyzer"] = function ()
-                    require("rust-tools").setup {}
-                end,
-            }
         },
-        dependencies = {
-            "mason.nvim",
-        }
     },
     {
         "neovim/nvim-lspconfig",
-    }
+        config = function()
+            vim.lsp.config('lua_ls', {
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = {"vim"},
+                        },
+                        telemetry = { enable = false }
+                    }
+                }
+            })
+        end
+    },
 }

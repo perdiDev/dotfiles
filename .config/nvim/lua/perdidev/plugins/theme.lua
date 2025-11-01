@@ -1,11 +1,12 @@
-return { 
+return {
     {
-        "catppuccin/nvim", 
-        name = "catppuccin", 
+        "catppuccin/nvim",
+        name = "catppuccin",
+        lazy = false,
         priority = 1000,
         config = function()
             -- load colorsheme
-            vim.cmd([[colorscheme catppuccin-mocha]])
+            vim.cmd([[colorscheme catppuccin-macchiato]])
         end,
         integrations = {
             treesitter = true,
@@ -31,3 +32,4 @@ return {
         end,
     }
 }
+
