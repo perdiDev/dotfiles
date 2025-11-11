@@ -1,3 +1,9 @@
+# reload config
+keybind = ctrl+g>r=reload_config
+
+# open command pallete
+keybind = ctrl+g>o=toggle_command_palette
+
 # toogle fullscreen
 keybind = ctrl+g>f=toggle_fullscreen
 
@@ -10,7 +16,7 @@ keybind = ctrl+g>w=new_window
 # previous tab
 keybind = ctrl+g>p=previous_tab
 
-# net tab
+# next tab
 keybind = ctrl+g>n=next_tab
 
 # split tab
@@ -34,7 +40,20 @@ keybind = ctrl+g>r>k=resize_split:up,100
 keybind = ctrl+g>r>l=resize_split:right,100
 
 # equalize split
-keybind = ctrl+g>r>e=equalize_splits
+keybind = ctrl+g>e=equalize_splits
 
 # close split, tab, or window
 keybind = ctrl+g>w>w=close_surface
+
+# select all text
+keybind = ctrl+g>a=select_all
+
+# copy text
+keybind = ctrl+g>y=copy_to_clipboard
+
+# back to prompt
+keybind = ctrl+g>i=jump_to_prompt:1
+
+# write to open the terminal output
+keybind = ctrl+g>b=write_scrollback_file:open
+
