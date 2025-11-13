@@ -1,31 +1,32 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    branch = 'main',
+    build = ':TSUpdate',
     opts = {
-	ensure_installed = {
-	    "lua",
-	    "vim",
-	    "vimdoc",
-	    "query",
-	    "markdown",
-	    "markdown_inline",
-	    "go",
-	    "php",
-	    "zig"
-	},
-	sync_install = false,
-	highlight = {
-	    enable = true,
-        disable = function(buf)
-            local max_filesize = 100 * 1024 -- 100 KB
-            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-                return true
+        ---@type string[]
+        ensure_installed = {'lua', 'vim', 'vimdoc', 'bash', 'go', 'gomod', 'php', 'phpdoc', 'blade' };
+    },
+    config = function(_, opts)
+        local TS = require("nvim-treesitter")
+        local server = opts.ensure_installed
+
+        vim.api.nvim_create_autocmd({'FileType'}, {
+            pattern = server,
+            callback = function (env)
+                local filetype = vim.bo.filetype
+
+                if vim.list_contains(TS.get_installed(), filetype) then
+                    if vim.treesitter.language.add(filetype) then
+                        vim.treesitter.start(env.buf)
+                        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                    end
+                elseif vim.list_contains(server, filetype) then
+                    TS.install({filetype}, { summary = true }):wait(3 * 60 * 1000) -- 3 menit
+                end
             end
-        end,
-	    additional_vim_regex_highlighting = false,
-	},
-	indent = { enabled = true },
-    }
+        })
+    end
 }
+
