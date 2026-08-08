@@ -2,11 +2,12 @@
     {
         "context": "menu && not_editing",
         "bindings": {
-            "q": "workspace::ToggleRightDock",
+            "space e": "workspace::ToggleRightDock",
             "%": "project_panel::NewFile",
             "d": "project_panel::NewDirectory",
             "shift-d": "project_panel::Delete",
-            "r": "project_panel::Rename"
+            "r": "project_panel::Rename",
+            "space h h": "workspace::ActivatePaneLeft"
         }
     },
     {
@@ -25,7 +26,9 @@
             "space t p": "pane::ActivatePreviousItem",
             "space escape": "workspace::ToggleRightDock",
             "space e e": "project_panel::ToggleFocus",
-            "space e g": "git_panel::ToggleFocus"
+            "space e g": "git_panel::ToggleFocus",
+            "space e": "workspace::ToggleRightDock",
+            "space l l": "workspace::ActivatePaneRight"
         }
     }
 ]

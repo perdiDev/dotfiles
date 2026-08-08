@@ -1,4 +1,22 @@
 {
+    "ssh_connections": [
+        {
+            "host": "10.42.0.183",
+            "username": "aimp",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/home/aimp/FinalProject/./"
+                    ]
+                }
+            ]
+        }
+    ],
+    "outline_panel": {
+        "dock": "left"
+    },
+    "show_edit_predictions": true,
     "auto_install_extensions": {
         "html": true,
         "catppuccin": true
@@ -8,10 +26,8 @@
     "confirm_quit": true,
     "enable_language_server": true,
     "ensure_final_newline_on_save": true,
-    "format_on_save": "on",
-    "max_tabs": 4,
+    "format_on_save": "off",
     "tab_size": 4,
-    "enable_preview_from_file_finder": false,
 
     "scrollbar": {
         "show": "never",
@@ -86,14 +102,53 @@
         "dock": "right"
     },
     "agent": {
+        "sandbox_permissions": {
+            "network_hosts": [
+                "raw.githubusercontent.com",
+                "api.github.com",
+                "docs.nvidia.com"
+            ]
+        },
+        "tool_permissions": {
+            "tools": {
+                "fetch": {
+                    "default": "allow"
+                },
+                "copy_path": {
+                    "always_allow": [
+                        {
+                            "pattern": "^/home/aimp/FinalProject/config/"
+                        }
+                    ]
+                },
+                "create_directory": {
+                    "always_allow": [
+                        {
+                            "pattern": "^/home/aimp/FinalProject/"
+                        }
+                    ]
+                },
+                "delete_path": {
+                    "default": "allow"
+                },
+                "search_web": {
+                    "default": "allow"
+                },
+                "terminal": {
+                    "default": "allow"
+                }
+            }
+        },
+        "default_profile": "write",
         "enabled": true,
         "button": true,
         "dock": "left",
         "default_model": {
+            "effort": "medium",
+            "enable_thinking": true,
             "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
-        },
-        "version": "2"
+            "model": "gpt-5.6-luna"
+        }
     },
     "terminal": {
         "button": false
@@ -102,6 +157,12 @@
     "features": {
         "edit_prediction_provider": "zed"
     },
-    "relative_line_numbers": true,
-    "vim_mode": true
+    "relative_line_numbers": "enabled",
+    "vim_mode": true,
+
+    "languages": {
+        "PHP": {
+            "language_servers": ["intelephense", "!phpactor"]
+        }
+    }
 }
