@@ -2,8 +2,29 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
-map("n", "<leader>e", ":Ex<Cr>", { desc = "To menu explore", silent = true})
-map("n", "<leader>qq", ":quit<Cr>", { desc = "Quit from project", silent = true })
-map("n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Show diagnostic", silent = true })
+-- toogle netrw
+map("n", "<leader>e", function ()
+    if vim.bo.filetype == "netrw" then
+        vim.cmd("Rexplore")
+    else
+        vim.cmd("Explore")
+    end
+end,
+{ desc = "Toogle netrw", silent = true})
+
+-- Quit
+map("n", "<leader>qq", "<cmd>quit<CR>", { desc = "Quit", silent = true })
+
+map("n", "<leader>%%", function()
+    local path = vim.fn.stdpath("config")
+
+    print("Reloaded " .. (path or 'config'))
+    vim.cmd.source(path .. "/init.lua")
+end,  { desc = "Reload Nvim", silent = true })
+
+map("n", "<leader>%l", "<cmd>Lazy reload<CR>", { desc = "Reload lazy", silent = true })
+
+map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write", silent = true })
+

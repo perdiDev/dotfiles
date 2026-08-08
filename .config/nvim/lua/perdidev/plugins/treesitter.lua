@@ -1,11 +1,14 @@
-return {
+local tsbranch = "master"
+local ensure_installed = {'lua', 'vim', 'vimdoc', 'bash', 'go', 'gomod', 'php', 'phpdoc', 'blade' }
+
+local mainconfig = {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
     branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
     opts = {
         ---@type string[]
-        ensure_installed = {'lua', 'vim', 'vimdoc', 'bash', 'go', 'gomod', 'php', 'phpdoc', 'blade' };
+        ensure_installed = ensure_installed;
     },
     config = function(_, opts)
         local TS = require("nvim-treesitter")
@@ -30,3 +33,35 @@ return {
     end
 }
 
+local masterconfig = {
+    "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
+    lazy = false,
+    build = ":TSUpdate",
+
+    opts = {
+        ensure_installed = ensure_installed,
+        sync_install = false,
+        auto_install = false,
+        ignore_install = {},
+
+        -- parser_install_dir = "/some/path/to/store/parsers", 
+        -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+        highlight = {
+            enable = true,
+
+            disable = function(_, buf)
+                local max_filesize = 100 * 1024 -- 100 KB
+                local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                if ok and stats and stats.size > max_filesize then
+                    return true
+                end
+            end,
+
+            additional_vim_regex_highlighting = false,
+        },
+    }
+}
+
+return tsbranch == "main" and mainconfig or masterconfig

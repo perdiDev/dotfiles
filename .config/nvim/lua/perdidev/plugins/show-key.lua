@@ -7,7 +7,6 @@ return {
     position = "top-right",
     exclude_mode = {"insert"},
 
-
     keyformat = {
       ["<BS>"] = "󰁮 ",
       ["<CR>"] = "󰘌",

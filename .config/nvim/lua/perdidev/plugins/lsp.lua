@@ -1,6 +1,7 @@
 return {
     {
         "mason-org/mason.nvim",
+        lazy = true,
         opts = {
             ui = {
                 border = "rounded",
@@ -11,6 +12,7 @@ return {
     },
     {
         "mason-org/mason-lspconfig.nvim",
+        lazy = true,
         opts = {
             ensure_installed = {
                 "lua_ls",
@@ -25,6 +27,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        event = {"BufReadPre", "BufNewFile"},
         dependencies = {
             'saghen/blink.cmp',
             'mason.nvim',
