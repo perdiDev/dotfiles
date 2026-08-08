@@ -10,8 +10,9 @@ hl.bind("SUPER + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind("SUPER + P", hl.dsp.exec_cmd("wofi --show run dmenu"))
 hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd("ghostty -e btop"))
 
--- Close window
+-- Window
 hl.bind("SUPER + BackSpace", hl.dsp.window.close())
+hl.bind("SUPER + M", hl.dsp.window.float({set="toggle"}))
 
 -- Window Navigation
 hl.bind("SUPER + h", hl.dsp.focus({direction="l"}))
@@ -52,7 +53,7 @@ hl.bind("SUPER + S", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region"))
 
 -- Mouse
-hl.bind("ALT + mouse:272", hl.dsp.window.drag(), { mouse = true })    -- ALT + LMB: Move a window
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })    -- ALT + LMB: Move a window
 
 -- Multimedia
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })

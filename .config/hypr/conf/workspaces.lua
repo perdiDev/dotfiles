@@ -1,10 +1,12 @@
 -- 
 -- Workspace Configuration
+--
 
 hl.workspace_rule({
     workspace = "1",
     default = true,
     default_name = "Dev",
+    persistent = true
 })
 
 hl.workspace_rule({
@@ -15,6 +17,7 @@ hl.workspace_rule({
 hl.workspace_rule({
     workspace = "3",
     default_name = "Learn",
+    on_created_empty = "zen-browser"
 })
 
 hl.workspace_rule({
