@@ -5,7 +5,7 @@
 -- Apps
 hl.bind("SUPER + RETURN", hl.dsp.exec_cmd("ghostty +new-window"))
 hl.bind("SUPER + I", hl.dsp.exec_cmd("zen-browser"))
-hl.bind("SUPER + U", hl.dsp.exec_cmd("zed"))
+hl.bind("SUPER + U", hl.dsp.exec_cmd("zeditor"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind("SUPER + P", hl.dsp.exec_cmd("wofi --show run dmenu"))
 hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd("ghostty -e btop"))
