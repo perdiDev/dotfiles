@@ -1,6 +1,6 @@
 eval "$(oh-my-posh init zsh --config ~/.perdidev.omp.toml)"
 
-# Show neofetch when open terminal
+# Show fasfetch when open terminal
 echo -e "\n" && fastfetch
 
 # source fzf in zsh
@@ -81,3 +81,13 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # go
 export GOPATH="$HOME/go"
 export PATH=$PATH:$GOPATH/bin
+
+# Created by `pipx` on 2025-11-22 03:20:28
+export PATH="$PATH:/home/perdidev/.local/bin"
+
+# GTASKS Api
+export GTASKS_CLIENT_ID="77050978665-fvvpvu4uurnhca90adkc0oj0ofl8jq3b.apps.googleusercontent.com"
+export GTASKS_CLIENT_SECRET="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"
+
+export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/flutter/flutter/bin:$PATH"
