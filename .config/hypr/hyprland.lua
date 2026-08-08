@@ -31,7 +31,7 @@ hl.config({
     },
 
     animations = {
-        enabled = false
+        enabled = true
     },
 
     decoration = {
@@ -46,7 +46,7 @@ hl.config({
         },
 
         blur = {
-            enabled = false, -- to save battery
+            enabled = true, -- to save battery
             size = 10,
             passes = 2,
             noise = 0.15,
