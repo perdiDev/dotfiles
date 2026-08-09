@@ -9,13 +9,10 @@
     "margin-top": 8,
 
     "user": {
-        // "format": "󰣇 {user} ({up_H}:{up_M})",
         "format": "󰣇 {user}",
-        "interval": 15,
         "height": 30,
         "width": 30,
-        "icon": true,
-        "open-on-click": true
+        "icon": true
     },
 
     "hyprland/workspaces": {
@@ -139,8 +136,8 @@
         "modules": ["group/expand", "network"]
     },
     "network": {
-        "interval": 3,
-        "format": "{ifname}",
+        "interval": 15,
+        "format": "{ifname}",
         "format-wifi": "  {signalStrength}%",
         "format-disconnected": "",
         "format-disabled": "󰪎",
@@ -149,41 +146,6 @@
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "$HOME/.config/waybar/scripts/toggle_wifi.sh"
     },
-
-    // "group/power": {
-    //     "orientation": "inherit",
-    //     "drawer": {
-    //         "transition-duration": 100,
-    //         "children-class": "not-power",
-    //         "transition-left-to-right": false
-    //     },
-    //     "modules": [
-    //         "custom/power", // First element is the "group leader" and won't ever be hidden
-    //         "custom/quit",
-    //         "custom/lock",
-    //         "custom/reboot"
-    //     ]
-    // },
-    // "custom/quit": {
-    //     "format": "󰗼",
-    //     "tooltip": false,
-    //     "on-click": "hyprctl dispatch exit"
-    // },
-    // "custom/lock": {
-    //     "format": "󰍁",
-    //     "tooltip": false,
-    //     "on-click": "hyprlock"
-    // },
-    // "custom/reboot": {
-    //     "format": "󰜉",
-    //     "tooltip": false,
-    //     "on-click": "reboot"
-    // },
-    // "custom/power": {
-    //     "format": "",
-    //     "tooltip": false,
-    //     "on-click": "shutdown now"
-    // },
 
     "privacy": {
         "icon-spacing": 4,
