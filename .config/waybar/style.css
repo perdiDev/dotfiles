@@ -8,19 +8,32 @@ window#waybar {
     background-color: transparent;
 }
 
-#user, #workspaces, #privacy, #clock, #system,  #setting, #power
+#user, #workspaces, #privacy, #center, #system,  #setting
 {
     color: @text;
     border-radius: 10px;
     background-color: alpha(@blue, .2);
+}
+
+#user, #privacy {
     padding: 2px 12px;
 }
 
-#workspaces, #system, #setting, #power {
+#workspaces, #center, #system, #setting {
     padding: 2px 4px;
 }
 
-#cpu, #memory, #battery, #bluetooth, #idle_inhibitor, #network, #wireplumber, #backlight, #expand, #custom-power, #custom-reboot, #custom-quit, #custom-lock {
+#cpu, 
+#memory, 
+#battery, 
+#bluetooth, 
+#idle_inhibitor, 
+#clock,
+#network, 
+#wireplumber, 
+#backlight, 
+#expand
+{
     padding: 0px 8px;
 }
 
@@ -56,26 +69,6 @@ window#waybar {
 
 #battery.nobattery {
     color: @red;
-}
-
-#custom-power:hover, #custom-quit:hover, #custom-reboot:hover, #custom-lock:hover {
-    color: @blue;
-}
-
-#custom-power {
-    color: @red;
-}
-
-#custom-lock {
-    color: @peach;
-}
-
-#custom-reboot {
-    color: @sapphire;
-}
-
-#custom-quit {
-    color: @pink;
 }
 
 tooltip {

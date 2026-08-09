@@ -1,15 +1,16 @@
 {
     "layer": "top",
     "modules-left": ["user", "hyprland/workspaces", "tray", "privacy"],
-    "modules-center": ["clock"],
-    "modules-right": ["group/system", "group/setting", "group/power", "idle_inhibitor"],
+    "modules-center": ["group/center"],
+    "modules-right": ["group/system", "group/setting"],
     "spacing": 8,
     "margin-left": 12,
     "margin-right": 12,
     "margin-top": 8,
 
     "user": {
-        "format": "󰣇 {user} ({up_H}:{up_M})",
+        // "format": "󰣇 {user} ({up_H}:{up_M})",
+        "format": "󰣇 {user}",
         "interval": 15,
         "height": 30,
         "width": 30,
@@ -43,6 +44,11 @@
         "spacing": 6
     },
 
+    "group/center": {
+        "orientation": "inherit",
+        "modules": ["idle_inhibitor", "clock"]
+    },
+
     "clock": {
         "interval": 60,
         "format": "{:%a, %d %b  %H:%M}",
@@ -51,6 +57,15 @@
         "calender": {
             "mode": "month"
         }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip-format-activated": "Begadang",
+        "tooltip-format-deactivated": "Boleh Rebahan"
     },
 
     "group/system": {
@@ -92,18 +107,11 @@
             "children-class": "no-expand",
             "transition-left-to-right": true
         },
-        "modules": ["custom/expand", "idle_inhibitor", "wireplumber", "backlight", "bluetooth"]
+        "modules": ["custom/expand", "wireplumber", "backlight", "bluetooth"]
     },
     "custom/expand": {
         "format": "",
         "tooltip": false
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
@@ -142,40 +150,40 @@
         "on-click": "$HOME/.config/waybar/scripts/toggle_wifi.sh"
     },
 
-    "group/power": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 100,
-            "children-class": "not-power",
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "custom/power", // First element is the "group leader" and won't ever be hidden
-            "custom/quit",
-            "custom/lock",
-            "custom/reboot"
-        ]
-    },
-    "custom/quit": {
-        "format": "󰗼",
-        "tooltip": false,
-        "on-click": "hyprctl dispatch exit"
-    },
-    "custom/lock": {
-        "format": "󰍁",
-        "tooltip": false,
-        "on-click": "hyprlock"
-    },
-    "custom/reboot": {
-        "format": "󰜉",
-        "tooltip": false,
-        "on-click": "reboot"
-    },
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "shutdown now"
-    },
+    // "group/power": {
+    //     "orientation": "inherit",
+    //     "drawer": {
+    //         "transition-duration": 100,
+    //         "children-class": "not-power",
+    //         "transition-left-to-right": false
+    //     },
+    //     "modules": [
+    //         "custom/power", // First element is the "group leader" and won't ever be hidden
+    //         "custom/quit",
+    //         "custom/lock",
+    //         "custom/reboot"
+    //     ]
+    // },
+    // "custom/quit": {
+    //     "format": "󰗼",
+    //     "tooltip": false,
+    //     "on-click": "hyprctl dispatch exit"
+    // },
+    // "custom/lock": {
+    //     "format": "󰍁",
+    //     "tooltip": false,
+    //     "on-click": "hyprlock"
+    // },
+    // "custom/reboot": {
+    //     "format": "󰜉",
+    //     "tooltip": false,
+    //     "on-click": "reboot"
+    // },
+    // "custom/power": {
+    //     "format": "",
+    //     "tooltip": false,
+    //     "on-click": "shutdown now"
+    // },
 
     "privacy": {
         "icon-spacing": 4,
