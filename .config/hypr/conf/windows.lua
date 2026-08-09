@@ -34,7 +34,6 @@ hl.window_rule({
     match = {
         float = true,
     },
-    workspace = "name:Dev",
     center = true,
     size = {"(monitor_w * 0.5)", "(monitor_h * 0.5)"}
 })
