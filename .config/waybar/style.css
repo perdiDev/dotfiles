@@ -20,7 +20,7 @@ window#waybar {
     padding: 2px 4px;
 }
 
-#cpu, #memory, #battery, #bluetooth, #network, #wireplumber, #backlight, #expand, #custom-power, #custom-reboot, #custom-quit, #custom-lock {
+#cpu, #memory, #battery, #bluetooth, #idle_inhibitor, #network, #wireplumber, #backlight, #expand, #custom-power, #custom-reboot, #custom-quit, #custom-lock {
     padding: 0px 8px;
 }
 
@@ -44,6 +44,10 @@ window#waybar {
 
 #workspaces button.active {
     color: @blue;
+}
+
+#battery.charging {
+    color: @sky;
 }
 
 #battery.warning {
@@ -83,4 +87,8 @@ tooltip {
 tooltip label {
     all: unset;
     color: @text;
+}
+
+#idle_inhibitor.activated {
+    color: @peach;
 }

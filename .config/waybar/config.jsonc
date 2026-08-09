@@ -2,7 +2,7 @@
     "layer": "top",
     "modules-left": ["user", "hyprland/workspaces", "tray", "privacy"],
     "modules-center": ["clock"],
-    "modules-right": ["group/system", "group/setting", "group/power"],
+    "modules-right": ["group/system", "group/setting", "group/power", "idle_inhibitor"],
     "spacing": 8,
     "margin-left": 12,
     "margin-right": 12,
@@ -23,12 +23,17 @@
         "persistent-workspaces": {"*": 5},
         "format-icons": {
             "1": "",
+            "Dev": "",
             "2": "",
+            "Code": "",
             "3": "",
+            "Learn": "",
             "4": "",
+            "Life": "",
             "5": "",
+            "Fun": "",
             "urgent": "",
-            "default": ""
+            "default": ""
         },
         "sort-by-number": true
     },
@@ -65,7 +70,7 @@
         "states": {
             "warning": 20,
             "critical": 10,
-            "nobattery": 0
+            "nobattery": 5
         },
         "max-length": 25
     },
@@ -87,11 +92,18 @@
             "children-class": "no-expand",
             "transition-left-to-right": true
         },
-        "modules": ["custom/expand", "wireplumber", "backlight", "bluetooth"]
+        "modules": ["custom/expand", "idle_inhibitor", "wireplumber", "backlight", "bluetooth"]
     },
     "custom/expand": {
         "format": "",
         "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "wireplumber": {
         "format": "{icon} {volume}%",
@@ -100,7 +112,7 @@
     },
     "backlight": {
         "format": "{icon} {percent}%",
-        "format-icons": ["", ""]
+        "format-icons": ["", "", "", ""]
     },
     "bluetooth": {
         "interval": 3,
