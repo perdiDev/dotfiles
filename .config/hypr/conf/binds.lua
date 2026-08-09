@@ -9,6 +9,7 @@ hl.bind("SUPER + U", hl.dsp.exec_cmd("zeditor"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind("SUPER + P", hl.dsp.exec_cmd("wofi --show run dmenu"))
 hl.bind("SUPER + SHIFT + slash", hl.dsp.exec_cmd("ghostty -e btop"))
+hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("~/.config/rofi/scripts/powermenu.sh"))
 
 -- Window
 hl.bind("SUPER + BackSpace", hl.dsp.window.close())

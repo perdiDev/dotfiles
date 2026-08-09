@@ -1,0 +1,9 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "Applications";
+    display-run: "Run";
+}
+
+@theme "themes/catppuccin-general"

@@ -1,0 +1,85 @@
+@import "catppuccin-mocha.rasi"
+
+configuration {
+    show-icons: false;
+    /* Menambahkan j dan k untuk navigasi ke atas/bawah ala Vim */
+    kb-row-up: "k";
+    kb-row-down: "j";
+    
+    /* Opsional: Menggunakan h dan l untuk navigasi kiri/kanan (jika menu horizontal) */
+    kb-row-left: "h";
+    kb-row-right: "l";
+}
+
+* {
+    primary: rgba(116, 199, 236, 0.8);   
+    background: rgba(30, 30, 46, 0.5);
+    background-alt: rgba(30, 30, 46, 0.8);
+    foreground: @blue;
+} 
+
+window {
+    width: 800px;
+    border: 1px;
+    border-radius: 12;
+    border-color: @blue;
+
+    background-color: @background;
+}
+
+mainbox {
+    padding: 44px;
+    spacing: 24px;
+    background-color: transparent;
+
+    children: [
+        "message",
+        "listview"
+    ];
+}
+
+message {
+    padding: 0px 0px 8px 0px;
+    background-color: transparent;
+}
+
+textbox {
+    text-color: @foreground;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+listview {
+    columns: 3;
+    lines: 2;
+
+    spacing: 24px;
+    fixed-columns: true;
+    dynamic: false;
+
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 18px 12px;
+    border-radius: 12px;
+
+    background-color: @background-alt;
+    text-color: @foreground;
+    border: 1px;
+    border-color: @sky;
+}
+
+element selected {
+    background-color: @primary;
+    text-color: @base;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: inherit;
+    background-color: transparent;
+}
+
