@@ -13,7 +13,11 @@ hl.bind("SUPER + SHIFT + Q", hl.dsp.exec_cmd("~/.config/rofi/scripts/powermenu.s
 
 -- Window
 hl.bind("SUPER + BackSpace", hl.dsp.window.close())
-hl.bind("SUPER + M", hl.dsp.window.float({set="toggle"}))
+hl.bind("SUPER + M", function ()
+    hl.dispatch(hl.dsp.window.float({set="toggle"}))
+    hl.dispatch(hl.dsp.window.resize({x = 1200, y=700}))
+    hl.dispatch(hl.dsp.window.center())
+end)
 
 -- Window Navigation
 hl.bind("SUPER + h", hl.dsp.focus({direction="l"}))
