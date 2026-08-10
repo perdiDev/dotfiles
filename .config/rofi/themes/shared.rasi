@@ -1,0 +1,60 @@
+@import "catppuccin-mocha.rasi"
+
+configuration {
+    show-icons: false; /* Default, akan di-override di launcher */
+}
+
+* {
+    /* Warna Global */
+    primary: rgba(116, 199, 236, 0.8);   
+    background: rgba(30, 30, 46, 0.5);
+    background-alt: rgba(30, 30, 46, 0.8);
+    foreground: @blue;
+} 
+
+window {
+    border: 1px;
+    border-radius: 12px;
+    border-color: @blue;
+    background-color: @background;
+}
+
+mainbox {
+    background-color: transparent;
+}
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    text-color: @foreground;
+    background-color: transparent;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+listview {
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    background-color: @background-alt;
+    text-color: @foreground;
+    border: 1px;
+    border-color: @sky;
+    border-radius: 10px;
+}
+
+element selected {
+    background-color: @primary;
+    text-color: @base;
+    border-color: @blue;
+}
+
+element-text {
+    text-color: inherit;
+    background-color: transparent;
+    vertical-align: 0.5;
+}
