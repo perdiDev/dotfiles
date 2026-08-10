@@ -6,4 +6,3 @@ configuration {
     display-run: "Run";
 }
 
-@theme "themes/catppuccin-general"

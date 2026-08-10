@@ -1,0 +1,92 @@
+@import "catppuccin-mocha.rasi"
+
+configuration {
+    show-icons: false;
+
+    /* Vim navigation */
+    kb-row-up: "k";
+    kb-row-down: "j";
+}
+
+* {
+    primary: rgba(116, 199, 236, 0.8);
+    background: rgba(30, 30, 46, 0.5);
+    background-alt: rgba(30, 30, 46, 0.8);
+    foreground: @blue;
+}
+
+window {
+    width: 650px;
+
+    border: 1px;
+    border-radius: 12px;
+    border-color: @blue;
+
+    background-color: @background;
+}
+
+mainbox {
+    padding: 32px;
+    spacing: 20px;
+
+    background-color: transparent;
+
+    children: [
+        "message",
+        "listview"
+    ];
+}
+
+message {
+    padding: 0px 0px 4px 0px;
+    background-color: transparent;
+}
+
+textbox {
+    text-color: @foreground;
+
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: transparent;
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+
+    spacing: 10px;
+
+    fixed-columns: true;
+    dynamic: true;
+
+    scrollbar: false;
+
+    background-color: transparent;
+}
+
+element {
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    background-color: @background-alt;
+    text-color: @foreground;
+
+    border: 1px;
+    border-color: @sky;
+}
+
+element selected {
+    background-color: @primary;
+    text-color: @base;
+
+    border-color: @blue;
+}
+
+element-text {
+    horizontal-align: 0.0;
+    vertical-align: 0.5;
+
+    text-color: inherit;
+    background-color: transparent;
+}
