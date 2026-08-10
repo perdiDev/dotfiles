@@ -26,6 +26,9 @@ hl.window_rule({
     match = {
         class = "Spotify"
     },
-    opacity = "0.75 override"
+    float = true,
+    opacity = "0.75 override",
+    move = {"monitor_w*0.15", "monitor_h*0.15"},
+    size = {"(monitor_w*0.7)", "(monitor_h*0.7)"},
 })
 
